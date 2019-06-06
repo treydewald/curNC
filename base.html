@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- stylesheet -->
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {
+font-family: "Roboto", sans-serif;
+margin:0;
+min-height:100%;
+width:100%;}
+</style>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+<header class="w3-container w3-center w3-padding-48 w3-white">
+    <a href="{{ url_for('homePage') }}" style="text-decoration:none"><h1 class="w3-xxxlarge"><b>curNC</b></h1>
+    <h6>Your source for all things <span class="w3-tag">crypto</span></h6></a>
+  </header>
+
+  <!-- Navigation header -->
+  <header class="w3-display-container w3-wide" id="home">
+    <div style="white-space:nowrap;"><h6><center><p letter-spacing:0px><a href="{{ url_for('introduction') }}"><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('introduction').style.display='block'">Introduction</button></a>
+{% if not session_user_name %}
+<a href="{{ url_for('createAccount') }}"><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('create').style.display='block'">Create Account</button></a>
+<a href="{{ url_for('logIn') }}"><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('login').style.display='block'">Log In</button></a>
+{% endif %}
+{% if session_user_name %}
+<a href="{{ url_for('logOut') }}"><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('logout').style.display='block'">Log Out</button></a>
+{% if not adminActive %}<a href="{{ url_for('manage') }}"><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('manage').style.display='block'">Manage Account</button></a>{% endif %}
+{% if adminActive %}<a href="{{ url_for('adminManage') }}"><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('manage').style.display='block'">Manage Users and Comments</button></a>{% endif %}
+                    <p><b>Logged in as: {{ session_user_name }}
+{% if adminActive %}
+<br><p><font color="blue"><b>Administrative permissions active</b></font></p>
+{% endif %}</b></p></div></div>
+           {% endif %}</p></center></div></h6>
+  </header>
+
+</body>
+{% block content %}{% endblock %}
+</html>

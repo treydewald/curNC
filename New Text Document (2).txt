@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!doctype html>
+    <title>Upload new prices for {{ currency }}</title>
+    <h1>Upload new prices for {{ currency }}</h1>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+</html>
+{% endblock %}

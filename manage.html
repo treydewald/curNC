@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+
+<html>
+
+<body class=w3-light-grey">
+<style>
+p {
+	letter-spacing:0px
+}
+table, td {
+	border: 0.1px solid gray;
+	height=2000px;
+	width=2000px;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #555555;
+} /* Green */
+.button3 {background-color: #008CBA;} /* Blue */
+
+</style>
+
+
+<center>
+  <!-- Grid -->
+  <div style="white-space:nowrap;">
+
+    <!-- Blog entries -->
+    <div style="white-space:nowrap;">
+	<!-- Blog entries -->
+	<div>
+        <div><center> 
+{% if session_user_name %}{% if favoritesActive %}
+<div><h5>Your Favorites</h5></div>
+<div><table cellpadding="10">
+<th>Remove</th>
+    <th>Name</th>
+    <th>Price</th> 
+    <th>Upvotes</th>
+<th>Downvotes</th>
+	<th>curNC Page</th>
+  </tr>
+  <tr>
+	<td><a href="{{ url_for('removeManage', currency=favoritesList[0]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[0] }}</td>
+    <td>${{ priceList[0] }}</td> 
+    <td>+{{ upvoteList[0] }}</td><td>-{{ downvoteList[0] }}</td>
+<td><a href="{{ url_for(favoriteUrl[0]) }}">History and Comments</a></td>
+  </tr>
+  {% if favoritesActive2 %}<tr>
+<td><a href="{{ url_for('removeManage', currency=favoritesList[1]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[1] }}</td>
+    <td>${{ priceList[1] }}</td> 
+    <td>+{{ upvoteList[1] }}</td><td>-{{ downvoteList[1] }}</td>
+<td><a href="{{ url_for(favoriteUrl[1]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+{% if favoritesActive3 %}<tr>
+<td><a href="{{ url_for('removeManage', currency=favoritesList[2]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[2] }}</td>
+    <td>${{ priceList[2] }}</td> 
+    <td>+{{ upvoteList[2] }}</td><td>-{{ downvoteList[2] }}</td>
+<td><a href="{{ url_for(favoriteUrl[2]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+<tr>
+
+{% if favoritesActive4 %}<td><a href="{{ url_for('removeManage', currency=favoritesList[3]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[3] }}</td>
+    <td>${{ priceList[3] }}</td> 
+    <td>+{{ upvoteList[3] }}</td><td>-{{ downvoteList[3] }}</td>
+<td><a href="{{ url_for(favoriteUrl[3]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+<tr>
+{% if favoritesActive5 %}
+<td><a href="{{ url_for('removeManage', currency=favoritesList[4]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[4] }}</td>
+    <td>${{ priceList[4] }}</td> 
+    <td>+{{ upvoteList[4] }}</td><td>-{{ downvoteList[4] }}</td>
+<td><a href="{{ url_for(favoriteUrl[4]) }}">History and Comments</a></td>
+  </tr>
+{% if favoritesActive6 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[5]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[5] }}</td>
+    <td>${{ priceList[5] }}</td> 
+    <td>+{{ upvoteList[5] }}</td><td>-{{ downvoteList[5] }}</td>
+<td><a href="{{ url_for(favoriteUrl[5]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+
+{% if favoritesActive7 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[6]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[6] }}</td>
+    <td>${{ priceList[6] }}</td> 
+    <td>+{{ upvoteList[6] }}</td><td>-{{ downvoteList[6] }}</td>
+<td><a href="{{ url_for(favoriteUrl[6]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+
+{% if favoritesActive8 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[7]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[7] }}</td>
+    <td>${{ priceList[7] }}</td> 
+    <td>+{{ upvoteList[7] }}</td><td>-{{ downvoteList[7] }}</td>
+<td><a href="{{ url_for(favoriteUrl[7]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+
+{% if favoritesActive9 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[8]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[8] }}</td>
+    <td>${{ priceList[8] }}</td> 
+    <td>+{{ upvoteList[8] }}</td><td>-{{ downvoteList[8] }}</td>
+<td><a href="{{ url_for(favoriteUrl[8]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+
+{% if favoritesActive10 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[9]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[9] }}</td>
+    <td>${{ priceList[9] }}</td> 
+    <td>+{{ upvoteList[9] }}</td><td>-{{ downvoteList[9] }}</td>
+<td><a href="{{ url_for(favoriteUrl[9]) }}">History and Comments</a></td>
+  </tr></div>
+{% endif %}
+</table>
+<br>
+<br>
+{% endif %}{% endif %}{% endif %}
+{% if not favoritesActive%}<div><h5>Favoriting a currency on the index page will cause them to appear here</h5></div>
+{% endif %}
+{% if session_user_name %}
+<div>
+<br>
+<h5>Your Comment History</h5></div>
+<br>
+<div><table cellpadding="10">
+{% if commentsRaw[0] %}<tr><td><a href="{{ url_for('removeComment', username=session_user_name, comment=commentsRaw[0][0], currency=commentsRaw[0][1])  }}"><button class="button button2">Remove</button></a></td><td><p><b>You</b> said "{{commentsRaw[0][0]}}" on {{commentsRaw[0][1]}}'s page</p></td></tr>{% endif %}
+
+{% if commentsRaw[1] %}<tr><td><a href="{{ url_for('removeComment', username=session_user_name, comment=commentsRaw[1][0], currency=commentsRaw[1][1])  }}"><button class="button button2">Remove</button></a></td><td><p><p><b>You</b> said "{{commentsRaw[1][0]}}" on {{commentsRaw[1][1]}}'s page</p></td></tr>{% endif %}
+
+{% if commentsRaw[2] %}<tr><td><a href="{{ url_for('removeComment', username=session_user_name, comment=commentsRaw[2][0], currency=commentsRaw[2][1])  }}"><button class="button button2">Remove</button></a></td><td><p><p><b>You</b> said "{{commentsRaw[2][0]}}" on {{commentsRaw[2][1]}}'s page</p></td></tr>{% endif %}
+
+{% if commentsRaw[3] %}<tr><td><a href="{{ url_for('removeComment', username=session_user_name, comment=commentsRaw[3][0], currency=commentsRaw[3][1])  }}"><button class="button button2">Remove</button></a></td><td><p><p><b>You</b> said "{{commentsRaw[3][0]}}" on {{commentsRaw[3][1]}}'s page</p></td></tr>{% endif %}
+
+{% if commentsRaw[4] %}<tr><td><a href="{{ url_for('removeComment', username=session_user_name, comment=commentsRaw[4][0], currency=commentsRaw[4][1])  }}"><button class="button button2">Remove</button></a></td><td><p><p><b>You</b> said "{{commentsRaw[4][0]}}" on {{commentsRaw[4][1]}}'s page</p></td></tr>{% endif %}
+
+{% if commentsRaw[5] %}<tr><a href="{{ url_for('removeComment', username=session_user_name, comment=commentsRaw[5][0], currency=commentsRaw[5][1])  }}"><button class="button button2">Remove</button></a></td><td><td><p><p><b>You</b> said "{{commentsRaw[5][0]}}" on {{commentsRaw[5][1]}}'s page</p></td></tr>{% endif %}
+
+{% if commentsRaw[6] %}<tr><a href="{{ url_for('removeComment', username=session_user_name, comment=commentsRaw[6][0], currency=commentsRaw[6][1])  }}"><button class="button button2">Remove</button></a></td><td><td><p><p><b>You</b> said "{{commentsRaw[6][0]}}" on {{commentsRaw[6][1]}}'s page</p></td></tr>{% endif %}
+
+{% if commentsRaw[7] %}<tr><a href="{{ url_for('removeComment', username=session_user_name, comment=commentsRaw[7][0], currency=commentsRaw[7][1])  }}"><button class="button button2">Remove</button></a></td><td><td><p><p><b>You</b> said "{{commentsRaw[7][0]}}" on {{commentsRaw[7][1]}}'s page</p></td></tr>{% endif %}
+
+{% if commentsRaw[8] %}<tr><a href="{{ url_for('removeComment', username=session_user_name, comment=commentsRaw[8][0], currency=commentsRaw[8][1])  }}"><button class="button button2">Remove</button></a></td><td><td><p><p><b>You</b> said "{{commentsRaw[8][0]}}" on {{commentsRaw[8][1]}}'s page</p></td></tr>{% endif %}
+
+{% if commentsRaw[9] %}<tr><a href="{{ url_for('removeComment', username=session_user_name, comment=commentsRaw[9][0], currency=commentsRaw[9][1])  }}"><button class="button button2">Remove</button></a></td><td><td><p><p><b>You</b> said "{{commentsRaw[9][0]}}" on {{commentsRaw[9][1]}}'s page</p></td></tr>{% endif %}
+</table>
+</div>
+{% endif %}
+<br>
+<br>
+</center></div></div>
+
+<!-- End blog entries -->
+</div>
+   
+    
+  <!-- End Grid -->
+  </div></center>
+  
+  <!-- End Page Container -->
+</div>
+</body>
+</html>
+
+{% endblock %}

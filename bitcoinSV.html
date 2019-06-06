@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+</head>
+<body class=w3-light-grey">
+<style>
+p {
+	letter-spacing:0px
+}
+</style>
+
+  <!-- Grid -->
+  <div style="white-space:nowrap;">
+
+    <!-- Blog entries -->
+    <div style="white-space:nowrap;">
+	<!-- Blog entries -->
+	<center>
+    <h1>{{ title }}</h1>
+
+    <canvas id="chart" width="600" height="400"></canvas>
+    <script>
+      // bar chart data
+      var barData = {
+        labels : [
+          {% for item in labels %}
+            "{{ item }}",
+          {% endfor %}
+        ],
+        datasets : [{
+          fillColor: "rgba(151,187,205,0.2)",
+          strokeColor: "rgba(151,187,205,1)",
+          pointColor: "rgba(151,187,205,1)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(151,187,205,1)",
+          bezierCurve : false,
+          data : [
+	    {% for item in values %}
+              {{ item }},
+            {% endfor %}]
+          }
+	]
+      }
+      Chart.defaults.global.animationSteps = 50;
+      Chart.defaults.global.tooltipYPadding = 16;
+      Chart.defaults.global.tooltipCornerRadius = 0;
+      Chart.defaults.global.tooltipTitleFontStyle = "normal";
+      Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+      Chart.defaults.global.animationEasing = "easeOutBounce";
+      Chart.defaults.global.responsive = false;
+      Chart.defaults.global.scaleLineColor = "black";
+      Chart.defaults.global.scaleFontSize = 16;
+      // get bar chart canvas
+      var mychart = document.getElementById("chart").getContext("2d");
+      steps = 10
+      max = {{ max }}
+      // draw bar chart
+      var LineChartDemo = new Chart(mychart).Line(barData, {
+        scaleOverride: true,
+        scaleSteps: steps,
+        scaleStepWidth: Math.ceil(max / steps),
+        scaleStartValue: 0,
+        scaleShowVerticalLines: true,
+        scaleShowGridLines : true,
+        barShowStroke : true,
+        scaleShowLabels: true,
+        bezierCurve: false,
+      });
+    </script>
+<div><b>{{ bitcoinSVUp }} Upvotes,               {{ bitcoinSVDown }} Downvotes</b></div>
+<br> 
+{% if not session_user_name %}
+<div>Log in to upvote, downvote, and view the comment section!</div>
+{% endif %}
+{% if session_user_name %}
+<p><a href="{{ url_for('upvoteCur', currency='bitcoinSV') }}" style="text-decoration:none"><button class="button2">Approve</button></a><a href="{{ url_for('downvoteCur', currency='bitcoinSV') }}" style="text-decoration:none"><button class="button3">Disapprove</button></a></p>
+<br>
+<form action="" method="POST">
+                    {% if error %}
+                        <p class=error><strong>Error:</strong> {{ error }}
+                    {% endif %}
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon3">Your Comment</span>
+                        <input type="text" class="form-control" id="comment" name="comment" aria-describedby="basic-addon3">
+                    </div>
+                    <br>
+                    <input type="Submit" value="Submit" class="btn btn-default btn-sm">
+                </form>
+{% if username1 %}
+<p><b>{{ username1 }}</b> says "{{ comment1 }}"</p>
+{% endif %}
+{% if username2 %}
+<p><b>{{ username2 }}</b> says "{{ comment2 }}"</p>
+{% endif %}
+{% if username3 %}
+<p><b>{{ username3 }}</b> says "{{ comment3 }}"</p>
+{% endif %}
+{% if username4 %}
+<p><b>{{ username4 }}</b> says "{{ comment4 }}"</p>
+{% endif %}
+{% if username5 %}
+<p><b>{{ username5 }}</b> says "{{ comment5 }}"</p>
+{% endif %}
+{% if username6 %}
+<p><b>{{ username6 }}</b> says "{{ comment6 }}"</p>
+{% endif %}
+{% if username7 %}
+<p><b>{{ username7 }}</b> says "{{ comment7 }}"</p>
+{% endif %}
+{% if username8 %}
+<p><b>{{ username8 }}</b> says "{{ comment8 }}"</p>
+{% endif %}
+{% if username9 %}
+<p><b>{{ username9 }}</b> says "{{ comment9 }}"</p>
+{% endif %}
+{% if username10 %}
+<p><b>{{ username10 }}</b> says "{{ comment10 }}"</p>
+{% endif %}
+{% endif %}
+<br>
+<br>
+  </center>
+<!-- End blog entries -->
+</div>
+   
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+</body>
+</html>
+
+{% endblock %}

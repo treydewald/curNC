@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+
+<html>
+
+<body class=w3-light-grey">
+<style>
+p {
+	letter-spacing:0px
+}
+table, td {
+	border: 0.1px solid gray;
+	height=2000px;
+	width=2000px;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #555555;
+} /* Green */
+.button3 {background-color: #008CBA;} /* Blue */
+
+</style>
+
+
+<center>
+  <!-- Grid -->
+  <div style="white-space:nowrap;">
+
+    <!-- Blog entries -->
+    <div style="white-space:nowrap;">
+	<!-- Blog entries -->
+	<div>
+        <div><center> 
+{% if adminActive %}
+<h5>User Comment History</h6>
+<table cellpadding="10">
+<tr>
+<th>Context</th>
+<th>Remove</th>
+{% if commentsRaw[0] %}<tr><td><p><b>{{commentsRaw[0][1]}}</b> said "{{commentsRaw[0][0]}}" on {{commentsRaw[0][2]}}'s page</p></td><td><a href="{{ url_for('removeCommentAdmin', username=commentsRaw[0][1], comment=commentsRaw[0][0], currency=commentsRaw[0][2])  }}"><button class="button button2">Remove</button></a></td></tr>{% endif %}
+
+{% if commentsRaw[1] %}<tr><td><p><b>{{commentsRaw[1][1]}}</b> said "{{commentsRaw[1][0]}}" on {{commentsRaw[1][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[2] %}<tr><td><p><b>{{commentsRaw[2][1]}}</b> said "{{commentsRaw[2][0]}}" on {{commentsRaw[2][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[3] %}<tr><td><p><b>{{commentsRaw[3][1]}}</b> said "{{commentsRaw[3][0]}}" on {{commentsRaw[3][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[4] %}<tr><td><p><b>{{commentsRaw[4][1]}}</b> said "{{commentsRaw[4][0]}}" on {{commentsRaw[4][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[5] %}<tr><td><p><b>{{commentsRaw[5][1]}}</b> said "{{commentsRaw[5][0]}}" on {{commentsRaw[5][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[6] %}<tr><td><p><b>{{commentsRaw[6][1]}}</b> said "{{commentsRaw[6][0]}}" on {{commentsRaw[6][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[7] %}<tr><td><p><b>{{commentsRaw[7][1]}}</b> said "{{commentsRaw[7][0]}}" on {{commentsRaw[7][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[8] %}<tr><td><p><b>{{commentsRaw[8][1]}}</b> said "{{commentsRaw[8][0]}}" on {{commentsRaw[8][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[9] %}<tr><td><p><b>{{commentsRaw[9][1]}}</b> said "{{commentsRaw[9][0]}}" on {{commentsRaw[9][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[10] %}<tr><td><p><b>{{commentsRaw[10][1]}}</b> said "{{commentsRaw[10][0]}}" on {{commentsRaw[10][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[11] %}<tr><td><p><b>{{commentsRaw[11][1]}}</b> said "{{commentsRaw[11][0]}}" on {{commentsRaw[11][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[12] %}<tr><td><p><b>{{commentsRaw[12][1]}}</b> said "{{commentsRaw[12][0]}}" on {{commentsRaw[12][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[13] %}<tr><td><p><b>{{commentsRaw[13][1]}}</b> said "{{commentsRaw[13][0]}}" on {{commentsRaw[13][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[14] %}<tr><td><p><b>{{commentsRaw[14][1]}}</b> said "{{commentsRaw[14][0]}}" on {{commentsRaw[14][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[15] %}<tr><td><p><b>{{commentsRaw[15][1]}}</b> said "{{commentsRaw[15][0]}}" on {{commentsRaw[15][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[16] %}<tr><td><p><b>{{commentsRaw[16][1]}}</b> said "{{commentsRaw[16][0]}}" on {{commentsRaw[16][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[17] %}<tr><td><p><b>{{commentsRaw[17][1]}}</b> said "{{commentsRaw[17][0]}}" on {{commentsRaw[17][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[18] %}<tr><td><p><b>{{commentsRaw[18][1]}}</b> said "{{commentsRaw[18][0]}}" on {{commentsRaw[18][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[19] %}<tr><td><p><b>{{commentsRaw[19][1]}}</b> said "{{commentsRaw[19][0]}}" on {{commentsRaw[9][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[20] %}<tr><td><p><b>{{commentsRaw[20][1]}}</b> said "{{commentsRaw[20][0]}}" on {{commentsRaw[20][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[21] %}<tr><td><p><b>{{commentsRaw[21][1]}}</b> said "{{commentsRaw[21][0]}}" on {{commentsRaw[21][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[22] %}<tr><td><p><b>{{commentsRaw[22][1]}}</b> said "{{commentsRaw[22][0]}}" on {{commentsRaw[22][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[23] %}<tr><td><p><b>{{commentsRaw[23][1]}}</b> said "{{commentsRaw[23][0]}}" on {{commentsRaw[23][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[24] %}<tr><td><p><b>{{commentsRaw[24][1]}}</b> said "{{commentsRaw[24][0]}}" on {{commentsRaw[24][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[25] %}<tr><td><p><b>{{commentsRaw[25][1]}}</b> said "{{commentsRaw[25][0]}}" on {{commentsRaw[25][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[26] %}<tr><td><p><b>{{commentsRaw[26][1]}}</b> said "{{commentsRaw[26][0]}}" on {{commentsRaw[26][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[27] %}<tr><td><p><b>{{commentsRaw[27][1]}}</b> said "{{commentsRaw[27][0]}}" on {{commentsRaw[27][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[28] %}<tr><td><p><b>{{commentsRaw[28][1]}}</b> said "{{commentsRaw[28][0]}}" on {{commentsRaw[28][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+
+{% if commentsRaw[29] %}<tr><td><p><b>{{commentsRaw[29][1]}}</b> said "{{commentsRaw[29][0]}}" on {{commentsRaw[29][2]}}'s page</p></td><td><button class="button button2">Remove</button></td></tr>{% endif %}
+{% endif %}
+</table>
+<br>
+<br>
+</center></div></div>
+
+<!-- End blog entries -->
+</div>
+   
+    
+  <!-- End Grid -->
+  </div></center>
+  
+  <!-- End Page Container -->
+</div>
+</body>
+</html>
+
+{% endblock %}

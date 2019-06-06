@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<style>
+p {
+	letter-spacing:0px
+}
+</style>
+<body class=w3-light-grey">
+
+
+  <!-- Grid -->
+  <div style="white-space:nowrap;">
+
+    <!-- Blog entries -->
+    <div style="white-space:nowrap;">
+	<!-- Blog entries -->
+	
+
+<center><div class="col-md-6 col-md-offset-3">
+                <form action="" method="POST">
+
+                    {% if error %}
+                        <p class=error><strong>Error:</strong> {{ error }}
+                    {% endif %}
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon3">Your Username</span>
+                        <input type="text" class="form-control" name="username" id="user" aria-describedby="basic-addon3">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon3">Your Password</span>
+                        <input type="password" class="form-control" id="pass" name="password" aria-describedby="basic-addon3">
+                    </div>
+                    <br>
+			<div class="input-group">
+                        <span class="input-group-addon" id="basic-addon3">Repeat Password</span>
+                        <input type="password" class="form-control" id="pass2" name="password2" aria-describedby="basic-addon3">
+                    </div>
+<br>
+                    <input type="Submit" value="Login" class="btn btn-default btn-sm">
+                </form>
+            </div>
+</center>
+
+<!-- End blog entries -->
+</div>
+   
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+</body>
+</html>
+
+{% endblock %}

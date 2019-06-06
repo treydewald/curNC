@@ -1,0 +1,343 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+
+<html>
+
+<body class=w3-light-grey">
+<style>
+p {
+	letter-spacing:0px
+}
+table, td {
+	border: 0.1px solid gray;
+	height=2000px;
+	width=2000px;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #555555;
+} /* Green */
+.button3 {background-color: #008CBA;} /* Blue */
+
+</style>
+
+
+<center>
+  <!-- Grid -->
+  <div style="white-space:nowrap;">
+
+    <!-- Blog entries -->
+    <div style="white-space:nowrap;">
+	<!-- Blog entries -->
+	<div>
+        <div>
+<center>
+{% if session_user_name %}
+{% if favoritesActive %}
+<h5>Your Favorites</h5>
+<table cellpadding="10">
+<th>Remove</th>
+    <th>Name</th>
+    <th>Price</th> 
+    <th>Upvotes</th>
+<th>Downvotes</th>
+	<th>curNC Page</th>
+  </tr>
+  <tr>
+	<td><a href="{{ url_for('remove', currency=favoritesList[0]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[0] }}</td>
+    <td>${{ priceList[0] }}</td> 
+    <td>+{{ upvoteList[0] }}</td><td>-{{ downvoteList[0] }}</td>
+<td><a href="{{ url_for(favoriteUrl[0]) }}">History and Comments</a></td>
+  </tr>
+  {% if favoritesActive2 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[1]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[1] }}</td>
+    <td>${{ priceList[1] }}</td> 
+    <td>+{{ upvoteList[1] }}</td><td>-{{ downvoteList[1] }}</td>
+<td><a href="{{ url_for(favoriteUrl[1]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+{% if favoritesActive3 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[2]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[2] }}</td>
+    <td>${{ priceList[2] }}</td> 
+    <td>+{{ upvoteList[2] }}</td><td>-{{ downvoteList[2] }}</td>
+<td><a href="{{ url_for(favoriteUrl[2]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+<tr>
+
+{% if favoritesActive4 %}<td><a href="{{ url_for('remove', currency=favoritesList[3]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[3] }}</td>
+    <td>${{ priceList[3] }}</td> 
+    <td>+{{ upvoteList[3] }}</td><td>-{{ downvoteList[3] }}</td>
+<td><a href="{{ url_for(favoriteUrl[3]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+<tr>
+{% if favoritesActive5 %}
+<td><a href="{{ url_for('remove', currency=favoritesList[4]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[4] }}</td>
+    <td>${{ priceList[4] }}</td> 
+    <td>+{{ upvoteList[4] }}</td><td>-{{ downvoteList[4] }}</td>
+<td><a href="{{ url_for(favoriteUrl[4]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+
+{% if favoritesActive6 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[5]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[5] }}</td>
+    <td>${{ priceList[5] }}</td> 
+    <td>+{{ upvoteList[5] }}</td><td>-{{ downvoteList[5] }}</td>
+<td><a href="{{ url_for(favoriteUrl[5]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+
+{% if favoritesActive7 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[6]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[6] }}</td>
+    <td>${{ priceList[6] }}</td> 
+    <td>+{{ upvoteList[6] }}</td><td>-{{ downvoteList[6] }}</td>
+<td><a href="{{ url_for(favoriteUrl[6]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+
+{% if favoritesActive8 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[7]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[7] }}</td>
+    <td>${{ priceList[7] }}</td> 
+    <td>+{{ upvoteList[7] }}</td><td>-{{ downvoteList[7] }}</td>
+<td><a href="{{ url_for(favoriteUrl[7]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+
+{% if favoritesActive9 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[8]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[8] }}</td>
+    <td>${{ priceList[8] }}</td> 
+    <td>+{{ upvoteList[8] }}</td><td>-{{ downvoteList[8] }}</td>
+<td><a href="{{ url_for(favoriteUrl[8]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+
+{% if favoritesActive10 %}<tr>
+<td><a href="{{ url_for('remove', currency=favoritesList[9]) }}"><button class="button button2">Remove</button></a></td>
+    <td>{{ favoritesList[9] }}</td>
+    <td>${{ priceList[9] }}</td> 
+    <td>+{{ upvoteList[9] }}</td><td>-{{ downvoteList[9] }}</td>
+<td><a href="{{ url_for(favoriteUrl[9]) }}">History and Comments</a></td>
+  </tr>{% endif %}
+</table>
+<br>
+<br>
+{% endif %}{% endif %}
+<h5>All Cryptocurrencies</h5>
+<br>
+ <table cellpadding="10">
+  <tr>
+
+{% if session_user_name %}<th>Favorite</th>{% endif %}
+    <th>Name</th>
+    <th>Price</th> 
+    <th>Upvotes</th>
+<th>Downvotes</th>
+	<th>curNC Page</th>
+{% if adminActive %}<th>Update Prices</th>{% endif %}
+  </tr>
+  <tr>
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='bitcoin') }}"><button class="button button3">Favorite</button></p></td></a>{% endif %}
+    <td>Bitcoin</td>
+    <td>${{ priceBitcoin }}</td> 
+    <td>+{{ bitcoinUp }}</td><td>-{{ bitcoinDown }}</td>
+<td><a href="{{ url_for('bitcoin') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='bitcoin') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+  <tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='ethereum') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Ethereum</td>
+    <td>${{ priceEthereum }}</td> 
+    <td>+{{ ethereumUp }}</td><td>-{{ ethereumDown }}</td>
+<td><a href="{{ url_for('ethereum') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='ethereum') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+<tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='xrp') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>XRP</td>
+    <td>${{ priceXRP }}</td> 
+    <td>+{{ xrpUp }}</td><td>-{{ xrpDown }}</td>
+<td><a href="{{ url_for('xrp') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='xrp') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+<tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='litecoin') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Litecoin</td>
+    <td>${{ priceLitecoin }}	</td> 
+    <td>+{{ litecoinUp }}</td><td>-{{ litecoinDown }}</td>
+<td><a href="{{ url_for('litecoin') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='litecoin') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+<tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='eos') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>EOS</td>
+    <td>${{ priceEOS }}</td> 
+    <td>+{{ eosUp }}</td><td>-{{ eosDown }}</td>
+<td><a href="{{ url_for('eos') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='eos') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+
+
+
+{% if session_user_name %}<td><button class="button button3">Favorite</button></td>{% endif %}
+    <td>Bitcoin Cash</td>
+    <td>${{ pricebitcoinCash }}</td> 
+    <td>+{{ bitcoinCashUp }}</td><td>-{{ bitcoinCashDown }}</td>
+<td><a href="{{ url_for('bitcoinCash') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='bitcoinCash') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+
+{% if session_user_name %}<td><button class="button button3">Favorite</button></td>{% endif %}
+    <td>Binance Coin</td>
+    <td>${{ pricebinanceCoin }}</td> 
+    <td>+{{ binanceCoinUp }}</td><td>-{{ binanceCoinDown }}</td>
+<td><a href="{{ url_for('binanceCoin') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='binanceCoin') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='tether') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Tether</td>
+    <td>${{ pricetether }}</td> 
+    <td>+{{ tetherUp }}</td><td>-{{ tetherDown }}</td>
+<td><a href="{{ url_for('tether') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='tether') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='stellar') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Stellar</td>
+    <td>${{ pricestellar }}</td> 
+    <td>+{{ stellarUp }}</td><td>-{{ stellarDown }}</td>
+<td><a href="{{ url_for('stellar') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='stellar') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='cardano') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Cardano</td>
+    <td>${{ pricecardano }}</td> 
+    <td>+{{ cardanoUp }}</td><td>-{{ cardanoDown }}</td>
+<td><a href="{{ url_for('cardano') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='cardano') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='tron') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Tron</td>
+    <td>${{ pricetron }}</td> 
+    <td>+{{ tronUp }}</td><td>-{{ tronDown }}</td>
+<td><a href="{{ url_for('tron') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='tron') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='monero') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Monero</td>
+    <td>${{ pricemonero }}</td> 
+    <td>+{{ moneroUp }}</td><td>-{{ moneroDown }}</td>
+<td><a href="{{ url_for('monero') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='monero') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><button class="button button3">Favorite</button></td>{% endif %}
+    <td>Bitcoin SV</td>
+    <td>${{ pricebitcoinSV }}</td> 
+    <td>+{{ bitcoinSVUp }}</td><td>-{{ bitcoinSVDown }}</td>
+<td><a href="{{ url_for('bitcoinSV') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='bitcoinSV') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='dash') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Dash</td>
+    <td>${{ pricedash }}</td> 
+    <td>+{{ dashUp }}</td><td>-{{ dashDown }}</td>
+<td><a href="{{ url_for('dash') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='dash') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='iota') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>IOTA</td>
+    <td>${{ priceiota }}</td> 
+    <td>+{{ iotaUp }}</td><td>-{{ iotaDown }}</td>
+<td><a href="{{ url_for('iota') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='iota') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='tezos') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Tezos</td>
+    <td>${{ pricetezos }}</td> 
+    <td>+{{ tezosUp }}</td><td>-{{ tezosDown }}</td>
+<td><a href="{{ url_for('tezos') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='tezos') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='cosmos') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Cosmos</td>
+    <td>Pricing not available</td> 
+    <td>+{{ cosmosUp }}</td><td>-{{ cosmosDown }}</td>
+<td><a href="{{ url_for('cosmos') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='cosmos') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><button class="button button3">Favorite</button></td>{% endif %}
+    <td>Ethereum Classic</td>
+    <td>${{ priceethereumClassic }}</td> 
+    <td>+{{ ethereumClassicUp }}</td><td>-{{ ethereumClassicDown }}</td>
+<td><a href="{{ url_for('ethereumClassic') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='ethereumClassic') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='neo') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>NEO</td>
+    <td>${{ priceneo }}</td> 
+    <td>+{{ neoUp }}</td><td>-{{ neoDown }}</td>
+<td><a href="{{ url_for('neo') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='neo') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+{% if session_user_name %}<td><a href="{{ url_for('favorite', currency='ontology') }}"><button class="button button3">Favorite</button></td></a>{% endif %}
+    <td>Ontology</td>
+    <td>${{ priceontology }}</td> 
+    <td>+{{ ontologyUp }}</td><td>-{{ ontologyDown }}</td>
+<td><a href="{{ url_for('ontology') }}">History and Comments</a></td>
+{% if adminActive %}<td><a href="{{ url_for('upload_file', currency='ontology') }}"><button class="button button3">Update Prices</button></p></td>{% endif %}
+  </tr>
+
+
+
+
+</table>
+<br>
+<br></center></div></div>
+
+<!-- End blog entries -->
+</div>
+   
+    
+  <!-- End Grid -->
+  </div></center>
+  
+  <!-- End Page Container -->
+</div>
+</body>
+</html>
+
+{% endblock %}
